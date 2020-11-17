@@ -1,5 +1,5 @@
 describe('To Equal Comparator', () => {
-    it('should  validate the To Equal use', () => {
+    it('should validate the To Equal use', () => {
         const obj1 = { value: true};
         const obj2 = { value: true};
 
