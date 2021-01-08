@@ -1,4 +1,4 @@
-describe('Before All Test', function () {
+xdescribe('Before All Test', function () {
     var count = 0;
 
     beforeAll(function () {

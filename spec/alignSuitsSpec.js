@@ -1,4 +1,4 @@
-describe('External Suite Test', () => {
+xdescribe('External Suite Test', () => {
     let externalCount = 0;
 
     beforeEach(() => {
