@@ -1,15 +1,21 @@
 describe('Spy tests', () => {
-    let calculadora = {
+    let calculator = {
         sum: function(n1,n2) {
             return n1 + n2;
         }
     }
 
     beforeAll(() => {
-        spyOn(calculadora, 'sum');
+        spyOn(calculator, 'sum');
     });
 
     it('should has "sum" method like undefined', () => {
-        expect(calculadora.sum(1,2)).toBeUndefined();
+        expect(calculator.sum(1,2)).toBeUndefined();
+    });
+
+    it('should validate if "sum" method was called', () => {
+        expect(calculator.sum).not.toHaveBeenCalled();
+        calculator.sum(1,1)
+        expect(calculator.sum).toHaveBeenCalled();
     });
 });
