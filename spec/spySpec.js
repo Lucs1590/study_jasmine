@@ -1,6 +1,6 @@
 describe('Spy tests', () => {
     let calculator = {
-        sum: function(n1,n2) {
+        sum: function (n1, n2) {
             return n1 + n2;
         }
     }
@@ -10,12 +10,12 @@ describe('Spy tests', () => {
     });
 
     it('should has "sum" method like undefined', () => {
-        expect(calculator.sum(1,2)).toBeUndefined();
+        expect(calculator.sum(1, 2)).toBeUndefined();
     });
 
     it('should validate if "sum" method was called', () => {
         expect(calculator.sum).not.toHaveBeenCalled();
-        calculator.sum(1,1);
+        calculator.sum(1, 1);
         expect(calculator.sum).toHaveBeenCalled();
     });
 });
