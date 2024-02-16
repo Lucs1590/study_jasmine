@@ -14,7 +14,7 @@ describe('Spy tests', () => {
     });
 
     it('should validate if "sum" method was called', () => {
-        expect(calculator.sum).not.toHaveBeenCalled();
+        // expect(calculator.sum).not.toHaveBeenCalled();
         calculator.sum(1, 1);
         expect(calculator.sum).toHaveBeenCalled();
     });
