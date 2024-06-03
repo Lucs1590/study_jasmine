@@ -13,13 +13,13 @@ describe('Spy tests', () => {
         spyOn(calculator, 'subtract');
     });
 
-    it('should show the use of "calls.mostRecent()"', () => {
+    it('should show the use of "calls.first()"', () => {
         calculator.sum(1, 1);
         calculator.sum(2, 3);
 
-        let mostRecentSumCalls = calculator.sum.calls.mostRecent();
+        let firstCall = calculator.sum.calls.first();
 
-        expect(mostRecentSumCalls.args).toEqual([2, 3]);
-        expect(mostRecentSumCalls.returnValue).toBe(10);
+        expect(firstCall.args).toEqual([1, 1]);
+        expect(firstCall.returnValue).toBe(10);
     });
 });
