@@ -13,11 +13,10 @@ describe('Spy tests', () => {
         spyOn(calculator, 'subtract');
     });
 
-    it('should show the use of "calls.argsFor()"', () => {
+    it('should show the use of "calls.count()"', () => {
         calculator.sum(1, 1);
         calculator.sum(2, 2);
-
-        expect(calculator.sum.calls.argsFor(0)).toEqual([1, 1]);
-        expect(calculator.sum.calls.argsFor(1)).toEqual([2, 2]);
+        expect(calculator.sum.calls.count()).toBe(2);
+        expect(calculator.subtract.calls.count()).toBe(0);
     });
 });
