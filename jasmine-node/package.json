@@ -1,0 +1,16 @@
+{
+  "name": "jasmine-node",
+  "version": "1.0.0",
+  "description": "This is a simple project to test jasmine with nodeJS and npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jasmine",
+    "node",
+    "test"
+  ],
+  "author": "Lucas de Brito Silva (Lucs1590)",
+  "license": "ISC"
+}
