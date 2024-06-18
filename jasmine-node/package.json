@@ -12,5 +12,8 @@
     "test"
   ],
   "author": "Lucas de Brito Silva (Lucs1590)",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^5.1.0"
+  }
 }
