@@ -4,7 +4,9 @@
   "description": "This is a simple project to test jasmine with nodeJS and npm",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test-jasmine": "jasmine",
+    "test-dev": "karma start --single-run",
+    "test-prd": "karma start"
   },
   "keywords": [
     "jasmine",
