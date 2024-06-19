@@ -16,9 +16,12 @@
   "author": "Lucas de Brito Silva (Lucs1590)",
   "license": "ISC",
   "devDependencies": {
+    "browserify": "^17.0.0",
     "jasmine": "^5.1.0",
     "karma": "^6.4.3",
+    "karma-browserify": "^8.1.0",
     "karma-chrome-launcher": "^3.2.0",
-    "karma-jasmine": "^5.1.0"
+    "karma-jasmine": "^5.1.0",
+    "watchify": "^4.0.0"
   }
 }

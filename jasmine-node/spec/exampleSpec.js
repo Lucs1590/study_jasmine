@@ -4,4 +4,7 @@ describe("A test to show the use of 'jasmine' with node", () => {
         expect(true).toBe(true);
     });
 
+    it('should show the use of "karma" with the listener møde', () => {
+        expect(1).toEqual(1);
+    });
 });
