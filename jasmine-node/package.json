@@ -14,6 +14,9 @@
   "author": "Lucas de Brito Silva (Lucs1590)",
   "license": "ISC",
   "devDependencies": {
-    "jasmine": "^5.1.0"
+    "jasmine": "^5.1.0",
+    "karma": "^6.4.3",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-jasmine": "^5.1.0"
   }
 }
