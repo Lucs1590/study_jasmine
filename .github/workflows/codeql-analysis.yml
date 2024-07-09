@@ -34,10 +34,6 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
 
-      - name: Install dependencies (if applicable)
-        if: matrix.language == 'javascript' || matrix.language == 'typescript'
-        run: npm install
-
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
 
