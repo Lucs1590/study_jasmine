@@ -1,6 +1,9 @@
 var Calculator = {
+    isValidNumber: function (num) {
+        return !isNaN(parseFloat(num));
+    },
     sum: function (a, b) {
-        if (isNaN(a) || isNaN(b)) {
+        if (!this.isValidNumber(a) || !this.isValidNumber(b)) {
             return 0;
         }
         a = parseFloat(a);
@@ -8,7 +11,7 @@ var Calculator = {
         return a + b;
     },
     subtract: function (a, b) {
-        if (isNaN(a) || isNaN(b)) {
+        if (!this.isValidNumber(a) || !this.isValidNumber(b)) {
             return 0;
         }
         return a - b;
@@ -17,7 +20,7 @@ var Calculator = {
         if (b == 0 || b == '0') {
             return 'Error';
         }
-        if (isNaN(a) || isNaN(b)) {
+        if (!this.isValidNumber(a) || !this.isValidNumber(b)) {
             return 0;
         }
         a = parseFloat(a);
@@ -25,7 +28,7 @@ var Calculator = {
         return a / b;
     },
     multiply: function (a, b) {
-        if (isNaN(a) || isNaN(b)) {
+        if (!this.isValidNumber(a) || !this.isValidNumber(b)) {
             return 0;
         }
         return a * b;
