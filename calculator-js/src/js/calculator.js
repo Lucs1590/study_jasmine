@@ -1,5 +1,7 @@
 var Calculator = {
     sum: function (a, b) {
+        a = parseFloat(a);
+        b = parseFloat(b);
         return a + b;
     },
     subtract: function (a, b) {
