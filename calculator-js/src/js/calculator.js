@@ -25,6 +25,9 @@ var Calculator = {
         return a / b;
     },
     multiply: function (a, b) {
+        if (isNaN(a) || isNaN(b)) {
+            return 0;
+        }
         return a * b;
     }
 };
