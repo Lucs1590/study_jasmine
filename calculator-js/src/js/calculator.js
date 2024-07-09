@@ -8,6 +8,9 @@ var Calculator = {
         return a + b;
     },
     subtract: function (a, b) {
+        if (isNaN(a) || isNaN(b)) {
+            return 0;
+        }
         return a - b;
     },
     divide: function (a, b) {
