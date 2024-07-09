@@ -14,6 +14,14 @@ var Calculator = {
         return a - b;
     },
     divide: function (a, b) {
+        if (b == 0 || b == '0') {
+            return 'Error';
+        }
+        if (isNaN(a) || isNaN(b)) {
+            return 0;
+        }
+        a = parseFloat(a);
+        b = parseFloat(b);
         return a / b;
     },
     multiply: function (a, b) {
