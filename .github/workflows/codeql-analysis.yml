@@ -1,22 +1,14 @@
-# For most projects, this workflow file will not need changing; you simply need
-# to commit it to your repository.
-#
-# You may wish to alter this file to override the set of languages analyzed,
-# or to provide custom queries or build logic.
-#
-# ******** NOTE ********
-# We have attempted to detect the languages in your repository. Please check
-# the `language` matrix defined below to confirm you have the correct set of
-# supported CodeQL languages.
-#
 name: "CodeQL"
 
 on:
   push:
-    branches: [master]
+    branches:
+      - main
+      - "release/**" # Analyze releases in separate branches
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [master]
+    branches:
+      - main
+      - "release/**"
   schedule:
     - cron: "42 5 * * 4"
 
@@ -36,11 +28,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
-        with:
-          languages: ${{ matrix.language }}
+
+      - name: Install dependencies (if applicable)
+        if: matrix.language == 'javascript' || matrix.language == 'typescript'
+        run: npm install
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
@@ -48,7 +44,8 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
 
-      - name: Upload CodeQL Analysis Results
+      - name: Generate SARIF report
+        if: always()
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: codeql-builtin.sarif
+          sarif_file: ${{ runner.workspace }}/codeql-analysis.sarif
