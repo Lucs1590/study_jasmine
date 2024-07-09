@@ -29,7 +29,7 @@ function getNumber(newNumb, currentNumb) {
     return txtInput.value;
 }
 
-function clean() {
+function clear() {
     num1 = '';
     num2 = '';
     operation = '';
