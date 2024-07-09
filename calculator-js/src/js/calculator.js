@@ -1,5 +1,8 @@
 var Calculator = {
     sum: function (a, b) {
+        if (isNaN(a) || isNaN(b)) {
+            return 0;
+        }
         a = parseFloat(a);
         b = parseFloat(b);
         return a + b;
