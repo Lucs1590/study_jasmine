@@ -1,49 +1,56 @@
-var Calculator = {
-    SUM: '+',
-    SUBTRACT: '-',
-    DIVIDE: '/',
-    MULTIPLY: '*',
+class Calculator {
+    static SUM = '+';
+    static SUBTRACT = '-';
+    static DIVIDE = '/';
+    static MULTIPLY = '*';
 
-    isValidNumber: function (num) {
+    static isValidNumber(num) {
         return !isNaN(parseFloat(num));
-    },
-    sum: function (a, b) {
+    }
+
+    static sum(a, b) {
         return Calculator.calculate(a, b, Calculator.SUM);
-    },
-    subtract: function (a, b) {
+    }
+
+    static subtract(a, b) {
         return Calculator.calculate(a, b, Calculator.SUBTRACT);
-    },
-    divide: function (a, b) {
-        if (b == 0 || b == '0') {
+    }
+
+    static divide(a, b) {
+        if (b === 0 || b === '0') {
             return 'Error';
         }
         return Calculator.calculate(a, b, Calculator.DIVIDE);
-    },
-    multiply: function (a, b) {
+    }
+
+    static multiply(a, b) {
         return Calculator.calculate(a, b, Calculator.MULTIPLY);
-    },
-    calculate: function (a, b, operator) {
+    }
+
+    static calculate(a, b, operator) {
         a = parseFloat(a);
         b = parseFloat(b);
 
-        if (!this.isValidNumber(a) || !this.isValidNumber(b)) {
+        if (!Calculator.isValidNumber(a) || !Calculator.isValidNumber(b)) {
             return 0;
         }
 
         switch (operator) {
-            case this.SUM:
+            case Calculator.SUM:
                 return a + b;
-            case this.SUBTRACT:
+            case Calculator.SUBTRACT:
                 return a - b;
-            case this.DIVIDE:
+            case Calculator.DIVIDE:
                 return a / b;
-            case this.MULTIPLY:
+            case Calculator.MULTIPLY:
                 return a * b;
             default:
                 return 0;
         }
     }
-};
+}
+
+module.exports = Calculator;
 
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = Calculator;
